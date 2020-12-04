@@ -4,3 +4,20 @@
   align-items: center;
   padding: 0 25px;
 }
+
+.header__logo {
+  flex-grow: 1;
+}
+
+.header_userInfo__container {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.header_userInfo__image {
+  border-radius: 100%;
+  background-color: aliceblue;
+  width: 52px;
+  height: 52px;
+}
