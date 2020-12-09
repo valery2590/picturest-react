@@ -1,10 +1,10 @@
-.boardsList__container {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
+.pinsList__container {
+  columns: 8 215px;
+  column-gap: 44px;
+  margin: 0 32px;
 }
 
-.boardsList__title {
+.pinsList__title {
   margin: 12px 32px;
   display: block;
   font-weight: bold;

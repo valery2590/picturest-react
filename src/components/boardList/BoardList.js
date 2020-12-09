@@ -5,16 +5,19 @@ import BoardCard from "../boardCard/BoardCard";
 const BoardList = () => {
   const [boards, setBoards] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/api/boards")
+    fetch("http://localhost:5000/api/users/1/boards")
       .then((response) => response.json())
       .then((json) => setBoards(json));
-  });
+  }, []);
 
   return (
-    <div className="boardsList__container">
-      {boards.map((board) => (
-        <BoardCard board={board} />
-      ))}
+    <div>
+      <span className="boardsList__title">Boards</span>
+      <div className="boardsList__container">
+        {boards.map((board) => (
+          <BoardCard board={board} key={board.id} />
+        ))}
+      </div>
     </div>
   );
 };
