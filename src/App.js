@@ -4,6 +4,10 @@ import BoardList from "./components/boardList/BoardList";
 import PinsList from "./components/pinsList/PinsList";
 import Header from "./components/header/Header";
 import UserCard from "./components/userCard/UserCard";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import BoardPage from "./pages/boardPage";
+import UserProfilePage from "./pages/userProfilePage";
+import HomePage from "./pages/homePage";
 
 function App() {
   const [user, setUser] = useState({});
@@ -15,15 +19,20 @@ function App() {
 
   return (
     <div className="app__body">
-      <Header user={user} />
-      <UserCard
-        avatar={user.avatar}
-        userName={user.username}
-        followingCount={user.following && user.following.length}
-        fullName={`${user.firstName} ${user.lastName}`}
-      />
-      <BoardList />
-      <PinsList />
+      <Router>
+        <Header user={user} />
+        <Switch>
+          <Route exact path="/boards/:id">
+            <BoardPage />
+          </Route>
+          <Route exact path="/user">
+            <UserProfilePage user={user} />
+          </Route>
+          <Route exact path="/">
+            <HomePage user={user} />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

@@ -1,11 +1,16 @@
 import "./Header.css";
 import Logo from "../../assets/logo.png";
+import { useHistory } from "react-router";
 
 const Header = ({ user }) => {
+  const history = useHistory();
   return (
     <div className="header__container">
       <div className="header__logo">
         <img src={Logo} alt="Picturest Logo" />
+        <div className="button__container" onClick={() => history.push("/")}>
+          Home
+        </div>
       </div>
       <div className="header_userInfo__container">
         <img

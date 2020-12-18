@@ -2,10 +2,21 @@ import { useEffect, useState } from "react";
 import "./BoardList.css";
 import BoardCard from "../boardCard/BoardCard";
 
+const createBoard = (boardData) => {
+  fetch("http://localhost:5000", {
+    method: "POST", // *GET, POST, PUT, DELETE, etc.
+    mode: "cors", // no-cors, *cors, same-origin
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(boardData), // body data type must match "Content-Type" header
+  });
+};
+
 const BoardList = () => {
   const [boards, setBoards] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/api/users/1/boards")
+    fetch("http://localhost:5000/api/boards")
       .then((response) => response.json())
       .then((json) => setBoards(json));
   }, []);
