@@ -39,3 +39,15 @@
   font-size: 14px;
   line-height: 16px;
 }
+
+.logout__button {
+  text-decoration: none;
+  border: 2px #BD081C solid;
+  background-color: #BD081C;
+  color: white;
+  padding: 5px 10px 5px 10px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 30px 80px 80px 80px;
+  cursor: pointer;
+}

@@ -1,23 +1,27 @@
 import "./Header.css";
 import Logo from "../../assets/logo.png";
 import { useHistory } from "react-router";
+import {Link} from "react-router-dom";
 
-const Header = ({ user }) => {
+const Header = ({ user, token }) => {
   const history = useHistory();
   return (
     <div className="header__container">
       <div className="header__logo">
-        <img src={Logo} alt="Picturest Logo" />
         <div className="button__container" onClick={() => history.push("/")}>
-          Home
+            <img className="img__logo" src={Logo} alt="Picturest Logo" />
         </div>
       </div>
       <div className="header_userInfo__container">
-        <img
-          src={user.avatar}
-          className="header_userInfo__image"
-          alt="User avatar"
-        />
+          {token ?
+              <img
+                  onClick={() => history.push('/user')}
+                  src={user.avatar}
+                  className="header_userInfo__image"
+                  alt="User avatar"
+              /> :
+              <Link className="header_login_button" to="/login">Login!</Link>
+          }
       </div>
     </div>
   );

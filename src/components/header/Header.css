@@ -20,4 +20,18 @@
   background-color: aliceblue;
   width: 52px;
   height: 52px;
+  cursor: pointer;
+}
+
+.header_login_button {
+  text-decoration: none;
+  border: 2px #BD081C solid;
+  background-color: #BD081C;
+  color: white;
+  padding: 5px 10px 5px 10px;
+  border-radius: 10px;
+}
+
+.img__logo{
+  cursor: pointer;
 }
