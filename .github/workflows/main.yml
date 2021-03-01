@@ -27,4 +27,7 @@ jobs:
       run: yarn test --coverage
 
     - name: Build
+      env:
+        NODE_ENV: test
+        CI: false
       run: yarn build
