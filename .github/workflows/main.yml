@@ -31,8 +31,7 @@ jobs:
         NODE_ENV: test
         CI: false
       run: yarn build
-      
-       PublishToNetlify:
+      PublishToNetlify:
     #if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     if: github.event_name == 'push' && github.ref == 'refs/heads/deployment'
     runs-on: ubuntu-latest
